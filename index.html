@@ -1121,7 +1121,6 @@
         </div>
     </section>
 
-    <!-- Scrollable Final Message Overlay -->
     <div id="final-message" class="fixed inset-0 bg-gradient-to-br from-[#1a050a] via-[#0a0204] to-[#050102] z-50 opacity-0 pointer-events-none transition-opacity duration-1000">
         
         <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -1169,7 +1168,6 @@
                             </p>
                         </div>
 
-                        <!-- Ending Area -->
                         <div class="mt-20 md:mt-32 flex flex-col items-center">
                             <span id="final-greeting" class="font-bold text-rose-200 text-lg sm:text-xl md:text-2xl block opacity-0 transition-opacity duration-1000 uppercase tracking-[0.4em] font-sans">
                                 Happy Women's Day, <br class="sm:hidden"/><span class="juhi-name normal-case tracking-normal text-6xl sm:text-7xl md:text-8xl mt-6 block sm:inline-block">Juhi</span>
@@ -1186,6 +1184,10 @@
         </div>
     </div>
 
+    <audio id="bg-music" loop>
+        <source src="Aud.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
         lucide.createIcons();
 
@@ -1198,6 +1200,8 @@
         const gatekeeperSuccess = document.getElementById('gatekeeper-success');
         const successName = document.getElementById('success-name');
         const successMsg = document.getElementById('success-msg');
+        
+        const bgMusic = document.getElementById('bg-music'); 
 
         let attempts = 0;
         let currentInput = "";
@@ -1228,6 +1232,10 @@
             
             successName.innerText = title;
             successMsg.innerText = subtitle;
+
+            if(bgMusic) {
+                bgMusic.play().catch(error => console.log("Audio playback failed or was blocked by the browser:", error));
+            }
             
             setTimeout(() => {
                 gatekeeperSuccess.style.pointerEvents = 'auto';

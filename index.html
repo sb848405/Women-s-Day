@@ -333,21 +333,33 @@
         .magnetic-text { display: inline-block; transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); will-change: transform; }
 
         .little-thing-card {
-            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             will-change: transform;
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
         }
         .little-thing-card:hover {
-            transform: translateY(-5px) scale(1.03);
+            transform: translateY(-8px) scale(1.02);
+            z-index: 10;
         }
         .little-thing-card .glass-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
-            backdrop-filter: blur(8px); 
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(12px); 
+            transition: all 0.4s ease;
+            border-radius: 1.5rem;
         }
         .little-thing-card:hover .glass-card {
-            background: linear-gradient(135deg, rgba(251,113,133,0.12) 0%, rgba(251,113,133,0.04) 100%);
-            border-color: rgba(251,113,133,0.4);
-            box-shadow: 0 10px 25px rgba(251,113,133,0.15);
+            background: linear-gradient(135deg, rgba(251,113,133,0.15) 0%, rgba(251,113,133,0.05) 100%);
+            border-color: rgba(251,113,133,0.5);
+            box-shadow: 0 15px 35px rgba(251,113,133,0.2), inset 0 0 20px rgba(251,113,133,0.05);
+        }
+        .little-thing-icon-wrap {
+            transition: all 0.4s ease;
+        }
+        .little-thing-card:hover .little-thing-icon-wrap {
+            background: rgba(251,113,133,0.2);
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 15px rgba(251,113,133,0.4);
         }
 
         .typewriter-cursor {
@@ -386,47 +398,47 @@
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-ring" id="cursor-ring"></div>
 
-    <header class="min-h-screen flex flex-col items-center justify-center relative px-4 overflow-hidden pt-20">
+    <header class="min-h-[100dvh] flex flex-col items-center justify-center relative px-4 overflow-hidden pt-20">
         <div class="text-center z-10 max-w-5xl mx-auto">
             <div class="reveal">
-                <p class="text-brand-300 font-sans tracking-[0.4em] uppercase text-xs md:text-sm mb-6 inline-block border border-brand-500/30 px-6 py-2 rounded-full bg-brand-900/10 backdrop-blur-md">
+                <p class="text-brand-300 font-sans tracking-[0.2em] sm:tracking-[0.4em] uppercase text-[10px] sm:text-xs md:text-sm mb-6 inline-block border border-brand-500/30 px-4 sm:px-6 py-2 rounded-full bg-brand-900/10 backdrop-blur-md">
                     A Celebration of You
                 </p>
             </div>
             
-            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-none reveal delay-1">
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-4 sm:mb-6 leading-none reveal delay-1">
                 <span class="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">Happy</span>
-                <span class="shimmer-text font-cursive text-7xl md:text-[10rem] font-normal leading-none block mt-[-10px] pb-4 drop-shadow-2xl">Women's Day</span>
+                <span class="shimmer-text font-cursive text-5xl sm:text-7xl md:text-[8rem] lg:text-[10rem] font-normal leading-tight sm:leading-none block mt-0 sm:mt-[-10px] pb-4 drop-shadow-2xl">Women's Day</span>
             </h1>
             
-            <p class="text-gray-300 font-sans text-lg md:text-2xl max-w-2xl mx-auto mt-8 font-light reveal delay-2 leading-relaxed">
+            <p class="text-gray-300 font-sans text-base sm:text-lg md:text-2xl max-w-2xl mx-auto mt-4 sm:mt-8 font-light reveal delay-2 leading-relaxed px-4">
                 To the woman whose very presence is a <i class="text-brand-400 font-serif">masterpiece</i>. Today is your day, but you make every day brighter.
             </p>
             
-            <div class="mt-20 reveal delay-2 flex flex-col items-center cursor-pointer group" onclick="document.getElementById('qualities').scrollIntoView({behavior: 'smooth'})">
-                <div class="w-[1px] h-16 bg-gradient-to-b from-brand-400 to-transparent mb-4 group-hover:h-20 transition-all duration-500"></div>
-                <p class="text-xs text-brand-300 tracking-widest uppercase mb-2 group-hover:text-brand-100 transition-colors">Scroll</p>
+            <div class="mt-16 sm:mt-20 reveal delay-2 flex flex-col items-center cursor-pointer group" onclick="document.getElementById('qualities').scrollIntoView({behavior: 'smooth'})">
+                <div class="w-[1px] h-12 sm:h-16 bg-gradient-to-b from-brand-400 to-transparent mb-4 group-hover:h-20 transition-all duration-500"></div>
+                <p class="text-[10px] sm:text-xs text-brand-300 tracking-widest uppercase mb-2 group-hover:text-brand-100 transition-colors">Scroll</p>
             </div>
         </div>
     </header>
 
-    <section id="qualities" class="py-32 px-4 relative z-10">
+    <section id="qualities" class="py-20 md:py-32 px-4 relative z-10">
         <div class="max-w-7xl mx-auto w-full">
-            <div class="text-center mb-16 md:mb-24 reveal">
-                <h2 class="font-serif text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-100 to-gray-300">
-                    Why You Are <br class="md:hidden"/><span class="shimmer-text font-cursive text-6xl md:text-7xl lowercase">unforgettable</span>
+            <div class="text-center mb-12 md:mb-24 reveal">
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-100 to-gray-300">
+                    Why You Are <br class="md:hidden"/><span class="shimmer-text font-cursive text-4xl sm:text-6xl md:text-7xl lowercase">unforgettable</span>
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 <div class="card-container reveal">
-                    <div class="glass-card p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
-                        <div class="card-icon w-20 h-20 rounded-full bg-gradient-to-br from-brand-600/40 to-brand-900/40 flex items-center justify-center mb-8 border border-brand-400/30 shadow-[0_0_30px_rgba(251,113,133,0.2)]">
-                            <i data-lucide="sparkles" class="w-10 h-10 text-brand-200"></i>
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-brand-600/40 to-brand-900/40 flex items-center justify-center mb-6 md:mb-8 border border-brand-400/30 shadow-[0_0_30px_rgba(251,113,133,0.2)]">
+                            <i data-lucide="sparkles" class="w-8 h-8 md:w-10 md:h-10 text-brand-200"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="font-serif text-3xl font-semibold mb-4 text-white">Your Mind</h3>
-                            <p class="text-gray-300 font-light leading-relaxed text-lg">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Mind</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
                                 Brilliant, chaotic, and beautiful. The way you think and see the world is endlessly fascinating to me.
                             </p>
                         </div>
@@ -434,13 +446,13 @@
                 </div>
 
                 <div class="card-container reveal delay-1">
-                    <div class="glass-card p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
-                        <div class="card-icon w-20 h-20 rounded-full bg-gradient-to-br from-gold-500/30 to-brand-700/30 flex items-center justify-center mb-8 border border-gold-400/30 shadow-[0_0_30px_rgba(250,204,21,0.2)]">
-                            <i data-lucide="star" class="w-10 h-10 text-gold-200 fill-gold-200/20"></i>
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-gold-500/30 to-brand-700/30 flex items-center justify-center mb-6 md:mb-8 border border-gold-400/30 shadow-[0_0_30px_rgba(250,204,21,0.2)]">
+                            <i data-lucide="star" class="w-8 h-8 md:w-10 md:h-10 text-gold-200 fill-gold-200/20"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="font-serif text-3xl font-semibold mb-4 text-white">Your Radiance</h3>
-                            <p class="text-gray-300 font-light leading-relaxed text-lg">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Radiance</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
                                 You carry a warmth that lights up rooms. A single smile from you can change the trajectory of an entire day.
                             </p>
                         </div>
@@ -448,13 +460,13 @@
                 </div>
 
                 <div class="card-container reveal delay-2">
-                    <div class="glass-card p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
-                        <div class="card-icon w-20 h-20 rounded-full bg-gradient-to-br from-purple-600/30 to-pink-700/30 flex items-center justify-center mb-8 border border-purple-400/30 shadow-[0_0_30px_rgba(192,132,252,0.2)]">
-                            <i data-lucide="shield-check" class="w-10 h-10 text-purple-200"></i>
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-purple-600/30 to-pink-700/30 flex items-center justify-center mb-6 md:mb-8 border border-purple-400/30 shadow-[0_0_30px_rgba(192,132,252,0.2)]">
+                            <i data-lucide="shield-check" class="w-8 h-8 md:w-10 md:h-10 text-purple-200"></i>
                         </div>
                         <div class="card-content">
-                            <h3 class="font-serif text-3xl font-semibold mb-4 text-white">Your Resilience</h3>
-                            <p class="text-gray-300 font-light leading-relaxed text-lg">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Resilience</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
                                 Grace under pressure. Your strength isn't just in how you endure, but in how you continue to love softly despite it all.
                             </p>
                         </div>
@@ -464,85 +476,315 @@
         </div>
     </section>
 
-    <section class="py-20 px-4 relative z-10" id="little-things">
-        <div class="max-w-5xl mx-auto w-full">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-100 to-gray-400">
-                    It's also the <span class="shimmer-text font-cursive text-5xl md:text-6xl lowercase">little things...</span>
+    <!-- Redesigned Little Things Section -->
+    <section class="py-20 md:py-24 px-4 relative z-10" id="little-things">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto w-full relative">
+            <div class="text-center mb-12 md:mb-20 reveal">
+                <i data-lucide="sparkles" class="w-6 h-6 md:w-8 md:h-8 text-brand-400 mx-auto mb-4 opacity-50"></i>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-brand-100 to-gray-400 leading-tight">
+                    It's also the <br class="sm:hidden" /><span class="shimmer-text font-cursive text-4xl sm:text-5xl md:text-6xl lowercase">little things...</span>
                 </h2>
-                <p class="text-brand-300/60 font-sans tracking-[0.3em] text-xs uppercase mt-4">The details I secretly admire</p>
+                <p class="text-brand-300/60 font-sans tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs uppercase mt-4 sm:mt-6">The details I secretly admire</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 relative">
+                
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="eye" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The way your eyes quietly tell stories even when you say nothing
+                        </span>
+                    </div>
+                </div>
+                
                 <div class="little-thing-card reveal delay-1 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">The way your eyes light up when you talk about your passions</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="sun" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            How your smile appears slowly but brightens everything
+                        </span>
                     </div>
                 </div>
+
                 <div class="little-thing-card reveal delay-2 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">Your laugh (it is genuinely my favorite sound)</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The little pause you take before saying something thoughtful
+                        </span>
                     </div>
                 </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="coffee" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The calm warmth you bring wherever you go
+                        </span>
+                    </div>
+                </div>
+
                 <div class="little-thing-card reveal delay-1 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">How effortlessly you make people feel safe and heard</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="sparkles" class="w-5 h-5 text-brand-300 fill-brand-300/20"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            How effortlessly you turn simple moments into beautiful ones
+                        </span>
                     </div>
                 </div>
+
                 <div class="little-thing-card reveal delay-2 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">The cute way you space out when you're thinking hard</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="heart" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The gentle kindness in the way you treat people
+                        </span>
                     </div>
                 </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="zap" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The spark in your eyes when something truly excites you
+                        </span>
+                    </div>
+                </div>
+
                 <div class="little-thing-card reveal delay-1 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">Your fierce loyalty to the people you care about</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="feather" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The way your presence makes everything feel a little lighter
+                        </span>
                     </div>
                 </div>
+
                 <div class="little-thing-card reveal delay-2 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">That soft, genuine smile you try to hide sometimes</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="waves" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            How your thoughts always seem deeper than your words
+                        </span>
                     </div>
                 </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="shield" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The quiet strength you carry without showing it off
+                        </span>
+                    </div>
+                </div>
+
                 <div class="little-thing-card reveal delay-1 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">How you accidentally scrunch your nose when you're confused</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="search" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The way you notice small things others miss
+                        </span>
                     </div>
                 </div>
+
                 <div class="little-thing-card reveal delay-2 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">The way you remember the smallest details about other people</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="users" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            How your happiness feels contagious to everyone around
+                        </span>
                     </div>
                 </div>
+                
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="leaf" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The natural grace in the way you move and speak
+                        </span>
+                    </div>
+                </div>
+
                 <div class="little-thing-card reveal delay-1 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">Your unapologetic excitement for the things you truly love</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="compass" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The way you stay true to yourself no matter what
+                        </span>
                     </div>
                 </div>
+
                 <div class="little-thing-card reveal delay-2 magnetic">
-                    <div class="glass-card px-8 py-4 rounded-full border border-white/10 cursor-none">
-                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide">How your hair falls perfectly even when you think it's a mess</span>
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="moon" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            How even your silence feels comforting
+                        </span>
                     </div>
                 </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="cloud-moon" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            Your face after a karate fight… like a red moon quietly glowing in the evening 🌙
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-1 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="droplet" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            When you come out of scuba diving… looks like a mermaid just decided to take a short walk on land 🧜‍♀️
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-2 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="wind" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            Your hair after climbing a hill… like the wind was trying to be your hairstylist
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="book-open" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The focused face you make while studying… like you’re solving a mystery no one else understands
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-1 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            When you finally finish studying… that peaceful smile says “mission completed”
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-2 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="medal" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The way you walk after karate practice… like a tiny champion who knows it
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="mountain" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            When you reach the top of a hill… like someone who just unlocked a new level
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-1 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="help-circle" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            The little confused look you make sometimes… like your brain opened too many tabs at once
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal delay-2 magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="play" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            When you laugh randomly… like someone pressed the happiness button
+                        </span>
+                    </div>
+                </div>
+
+                <div class="little-thing-card reveal magnetic">
+                    <div class="glass-card p-6 md:p-8 border border-white/10 cursor-none flex flex-col items-start gap-4">
+                        <div class="little-thing-icon-wrap w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                            <i data-lucide="battery" class="w-5 h-5 text-brand-300"></i>
+                        </div>
+                        <span class="font-sans text-sm md:text-base text-gray-200 font-light tracking-wide leading-relaxed">
+                            Your tired face after a long day… like someone who worked hard but still looks cute
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section class="py-28 px-4 relative z-10 flex flex-col items-center justify-center reveal">
-        <div class="text-center mb-12">
-            <h2 class="font-serif text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-brand-100 to-gray-300 mb-2">
-                A true <span class="font-cursive text-brand-300 text-5xl md:text-6xl shimmer-text lowercase">masterpiece</span>
+    <section class="py-20 md:py-28 px-4 relative z-10 flex flex-col items-center justify-center reveal">
+        <div class="text-center mb-10 md:mb-12">
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-brand-100 to-gray-300 mb-2">
+                A true <br class="sm:hidden" /><span class="font-cursive text-brand-300 text-4xl sm:text-5xl md:text-6xl shimmer-text lowercase">masterpiece</span>
             </h2>
-            <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-brand-400 to-transparent mx-auto mt-6"></div>
+            <div class="w-12 h-[1px] bg-gradient-to-r from-transparent via-brand-400 to-transparent mx-auto mt-4 md:mt-6"></div>
         </div>
 
-        <div class="relative max-w-sm w-full mx-auto magnetic group cursor-none tilt-element">
+        <div class="relative max-w-[280px] sm:max-w-xs md:max-w-sm w-full mx-auto magnetic group cursor-none tilt-element">
             <div class="absolute -inset-2 bg-gradient-to-r from-brand-500 via-purple-600 to-brand-400 rounded-[2.5rem] blur-xl opacity-20 group-hover:opacity-60 transition duration-1000 animate-pulse pointer-events-none"></div>
             
             <div class="relative p-2 md:p-3 bg-black/40 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] overflow-hidden transform transition-all duration-700 group-hover:scale-[1.02] shadow-[0_0_40px_rgba(0,0,0,0.8)]">
                 
                 <div class="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden bg-[#050505]">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="You" class="object-cover w-full h-full transform transition-all duration-1000 scale-110 group-hover:scale-100 opacity-60 group-hover:opacity-100 filter saturate-50 group-hover:saturate-100">
+                    <img src="Img.png" alt="You" class="object-cover w-full h-full transform transition-all duration-1000 scale-110 group-hover:scale-100 opacity-60 group-hover:opacity-100 filter saturate-50 group-hover:saturate-100">
                     
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none"></div>
                     
@@ -550,7 +792,7 @@
                     
                     <div class="absolute bottom-6 md:bottom-8 left-0 w-full flex justify-center items-center transform translate-y-6 group-hover:translate-y-0 transition-all duration-700 opacity-0 group-hover:opacity-100">
                         <div class="px-6 py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-[0_0_20px_rgba(251,113,133,0.3)]">
-                            <p class="font-sans tracking-[0.4em] uppercase text-[10px] md:text-xs text-brand-200 font-semibold">Perfection</p>
+                            <p class="font-sans tracking-[0.2em] sm:tracking-[0.4em] uppercase text-[10px] md:text-xs text-brand-200 font-semibold">Perfection</p>
                         </div>
                     </div>
                 </div>
@@ -558,33 +800,30 @@
         </div>
     </section>
 
-    <section class="py-32 px-4 relative z-10 flex justify-center">
+    <section class="py-20 md:py-32 px-4 relative z-10 flex justify-center">
         <div class="card-container max-w-4xl w-full mx-auto">
-            <div class="glass-card w-full p-10 md:p-20 relative overflow-hidden reveal tilt-element shadow-[0_0_80px_rgba(251,113,133,0.1)]">
+            <div class="glass-card w-full p-8 sm:p-12 md:p-20 relative overflow-hidden reveal tilt-element shadow-[0_0_80px_rgba(251,113,133,0.1)]">
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-400 to-transparent"></div>
                 
                 <div class="card-icon">
-                    <i data-lucide="quote" class="absolute top-8 left-8 w-16 h-16 text-brand-500/10 rotate-180"></i>
-                    <i data-lucide="quote" class="absolute bottom-8 right-8 w-16 h-16 text-brand-500/10"></i>
+                    <i data-lucide="quote" class="absolute top-4 left-4 md:top-8 md:left-8 w-10 h-10 md:w-16 md:h-16 text-brand-500/10 rotate-180"></i>
+                    <i data-lucide="quote" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-10 h-10 md:w-16 md:h-16 text-brand-500/10"></i>
                 </div>
                 
                 <div class="relative z-10 text-center card-content">
-                    <p class="font-serif text-xl md:text-3xl leading-relaxed md:leading-loose text-gray-100 font-light italic">
-                        "There are billions of people in the world, <br class="hidden md:block"/>
-                        navigating their own complex lives. <br/><br/>
-                        Yet somehow, knowing you exist in the same timeline... <br class="hidden md:block"/>
-                        makes the entire universe feel like <br/>
-                        it's finally making perfect sense."
+                    <p class="font-serif text-lg sm:text-xl md:text-3xl leading-relaxed md:leading-loose text-gray-100 font-light italic">
+                        Some women are strong because life makes them strong. Some are strong because they choose to be. You seem like someone who quietly carries both strength and grace at the same time.<br/><br/> Never doubt how powerful you are. The confidence, courage, and kindness you have say a lot about the kind of woman you are. Keep being fearless, keep shining, and never forget your worth. <br/><br/>
+                        You are a masterpiece in a world that often tries to fit people into molds. Your uniqueness is your superpower, and the way you embrace it is truly inspiring. Keep being unapologetically you, because the world needs more of your magic.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="min-h-screen flex flex-col items-center justify-center py-20 px-4 relative z-10 text-center">
+    <section class="min-h-[100dvh] flex flex-col items-center justify-center py-20 px-4 relative z-10 text-center">
         <div id="magic-container" class="reveal">
             <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4">One last thing...</h2>
-            <p class="text-gray-400 mb-16 font-sans tracking-wide">Take a deep breath, press, and hold.</p>
+            <p class="text-gray-400 mb-12 md:mb-16 font-sans tracking-wide text-sm md:text-base">Take a deep breath, press, and hold.</p>
             
             <div class="hold-btn-wrapper magnetic" id="hold-wrapper">
                 <svg class="progress-ring" viewBox="0 0 180 180">
@@ -600,34 +839,34 @@
 
     <div id="final-message" class="fixed inset-0 flex flex-col items-center justify-center bg-black/90 backdrop-blur-xl z-50 opacity-0 pointer-events-none transition-all duration-1000 p-4">
         
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[800px] max-h-[800px] bg-brand-600/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[90vw] md:h-[90vw] max-w-[800px] max-h-[800px] bg-brand-600/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse pointer-events-none"></div>
 
         <div class="max-w-4xl transform scale-50 translate-y-20 filter blur-xl transition-all duration-1000 w-full text-center relative" id="final-content">
             
             <div class="animate-float">
-                <div class="glass-card p-10 md:p-16 border border-white/10 shadow-[0_0_80px_rgba(251,113,133,0.2)] relative overflow-hidden rounded-3xl">
+                <div class="glass-card p-6 sm:p-10 md:p-16 border border-white/10 shadow-[0_0_80px_rgba(251,113,133,0.2)] relative overflow-hidden rounded-3xl">
                     <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-400 to-transparent"></div>
 
-                    <i data-lucide="sparkles" class="absolute top-8 left-8 w-6 h-6 text-brand-300/50 animate-pulse"></i>
-                    <i data-lucide="sparkles" class="absolute bottom-8 right-8 w-6 h-6 text-brand-300/50 animate-pulse" style="animation-delay: 1s;"></i>
+                    <i data-lucide="sparkles" class="absolute top-4 left-4 md:top-8 md:left-8 w-5 h-5 md:w-6 md:h-6 text-brand-300/50 animate-pulse"></i>
+                    <i data-lucide="sparkles" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-5 h-5 md:w-6 md:h-6 text-brand-300/50 animate-pulse" style="animation-delay: 1s;"></i>
 
-                    <i data-lucide="heart-handshake" class="w-20 h-20 md:w-24 md:h-24 text-brand-400 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(251,113,133,0.8)] relative z-10"></i>
+                    <i data-lucide="heart-handshake" class="w-16 h-16 md:w-24 md:h-24 text-brand-400 mx-auto mb-6 md:mb-8 drop-shadow-[0_0_30px_rgba(251,113,133,0.8)] relative z-10"></i>
                     
-                    <h1 class="font-cursive text-6xl md:text-[7rem] lg:text-[8rem] text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-white to-brand-300 mb-8 drop-shadow-2xl leading-none shimmer-text relative z-10">
+                    <h1 class="font-cursive text-5xl sm:text-6xl md:text-[7rem] lg:text-[8rem] text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-white to-brand-300 mb-6 md:mb-8 drop-shadow-2xl leading-none shimmer-text relative z-10">
                         You are magic.
                     </h1>
                     
-                    <div class="min-h-[150px] md:min-h-[120px] max-w-3xl mx-auto px-6 relative mt-12">
-                        <i data-lucide="quote" class="absolute -top-6 -left-2 w-8 h-8 text-brand-400/20 rotate-180"></i>
-                        <p class="font-serif text-xl md:text-3xl text-gray-200 font-light leading-relaxed relative z-10">
+                    <div class="min-h-[180px] sm:min-h-[150px] md:min-h-[120px] max-w-3xl mx-auto px-2 sm:px-6 relative mt-8 md:mt-12">
+                        <i data-lucide="quote" class="absolute -top-4 -left-0 md:-top-6 md:-left-2 w-6 h-6 md:w-8 md:h-8 text-brand-400/20 rotate-180"></i>
+                        <p class="font-serif text-lg sm:text-xl md:text-3xl text-gray-200 font-light leading-relaxed relative z-10">
                             <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
                         </p>
-                        <i data-lucide="quote" class="absolute -bottom-6 -right-2 w-8 h-8 text-brand-400/20"></i>
+                        <i data-lucide="quote" class="absolute -bottom-4 -right-0 md:-bottom-6 md:-right-2 w-6 h-6 md:w-8 md:h-8 text-brand-400/20"></i>
                     </div>
 
-                    <span id="final-greeting" class="font-bold text-white text-3xl md:text-5xl shimmer-text block mt-16 opacity-0 transition-opacity duration-1000 relative z-10">Happy Women's Day!</span>
+                    <span id="final-greeting" class="font-bold text-white text-2xl sm:text-3xl md:text-5xl shimmer-text block mt-12 md:mt-16 opacity-0 transition-opacity duration-1000 relative z-10">Happy Women's Day</span>
                     
-                    <button id="close-btn" onclick="closeFinalMessage()" class="mt-16 px-12 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-brand-500/20 hover:border-brand-400/50 transition-all font-sans tracking-widest text-sm uppercase group opacity-0 pointer-events-none duration-1000 shadow-[0_0_20px_rgba(251,113,133,0)] hover:shadow-[0_0_40px_rgba(251,113,133,0.4)] relative z-10">
+                    <button id="close-btn" onclick="closeFinalMessage()" class="mt-10 md:mt-16 px-8 md:px-12 py-3 md:py-4 rounded-full border border-white/20 bg-white/5 hover:bg-brand-500/20 hover:border-brand-400/50 transition-all font-sans tracking-widest text-xs md:text-sm uppercase group opacity-0 pointer-events-none duration-1000 shadow-[0_0_20px_rgba(251,113,133,0)] hover:shadow-[0_0_40px_rgba(251,113,133,0.4)] relative z-10">
                         <span class="group-hover:tracking-[0.3em] transition-all duration-300">Close</span>
                     </button>
                 </div>
@@ -866,7 +1105,7 @@
         const magicContainer = document.getElementById('magic-container');
         const shockwave = document.getElementById('shockwave');
         
-        const personalNote = "I wanted to make sure that today, out of all days, you know exactly how deeply admired, respected, and absolutely adored you are. Thank you for simply existing.";
+        const personalNote = "Just a small reminder that you’re truly special. Your smile, your kindness, and the way you carry yourself make you stand out in the most beautiful way. Hope today brings you lots of happiness and reminds you how amazing and appreciated you are. Keep being the wonderful person you are and keep spreading those positive vibes everywhere you go. ✨";
         let typeIndex = 0;
         const typeSpeed = 50; 
         let isTyping = false;

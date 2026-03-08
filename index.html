@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You. Happy Women's Day</title>
+    <title>JUHI ~ Happy Women's Day</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -140,7 +140,7 @@
             position: fixed;
             inset: 0;
             background: #050505;
-            z-index: 100000;
+            z-index: 100005;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -366,12 +366,145 @@
             display: inline-block;
             width: 3px;
             height: 1.1em;
-            background-color: #fb7185;
+            background-color: #fde047;
             vertical-align: text-bottom;
             animation: blink 1s step-end infinite;
             margin-left: 4px;
         }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .animate-shake {
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
         @keyframes blink { 50% { opacity: 0; } }
+
+        .numpad-btn {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .numpad-btn:active {
+            background: rgba(251, 113, 133, 0.3);
+            transform: scale(0.92);
+            border-color: rgba(251, 113, 133, 0.6);
+        }
+        @media (hover: hover) {
+            .numpad-btn:hover {
+                background: rgba(251, 113, 133, 0.15);
+                border-color: rgba(251, 113, 133, 0.4);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(251, 113, 133, 0.2);
+            }
+        }
+        .numpad-action {
+            font-size: 1rem;
+            font-weight: 600;
+            background: rgba(251, 113, 133, 0.08);
+            color: #fb7185;
+            border-color: rgba(251, 113, 133, 0.2);
+        }
+
+        @media (max-width: 400px) {
+            .numpad-btn {
+                width: 64px;
+                height: 64px;
+                font-size: 1.5rem;
+            }
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background: #fb7185;
+            opacity: 0;
+            animation: fall linear infinite;
+            will-change: transform, opacity;
+            z-index: 1;
+            border-radius: 4px;
+        }
+        @keyframes fall {
+            0% { opacity: 0; transform: translateY(-100px) rotate(0deg); }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .floating-svg {
+            position: absolute;
+            pointer-events: none;
+            z-index: 5;
+            will-change: transform, opacity;
+        }
+
+        @keyframes float-1 {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-20px) translateX(10px) rotate(15deg) scale(1.1); }
+        }
+        @keyframes float-2 {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) translateX(-15px) rotate(-15deg) scale(0.9); }
+        }
+        @keyframes float-3 {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-15px) translateX(20px) rotate(20deg) scale(1.05); }
+        }
+        
+        .slow-spin {
+            animation: slowSpin 30s linear infinite;
+        }
+        @keyframes slowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .juhi-name {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to right, #fde047, #fda4af, #fde047);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite;
+            display: inline-block;
+            padding-right: 0.1em;
+            text-shadow: 0 0 25px rgba(253,164,175,0.5);
+            line-height: 1.2;
+        }
+
+        .juhi-body-highlight {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em;
+            background: linear-gradient(to right, #fde047, #fda4af, #fde047);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 3s linear infinite;
+            margin: 0 4px;
+            vertical-align: baseline;
+            text-shadow: 0 0 15px rgba(253,164,175,0.4);
+            font-weight: 700;
+        }
 
     </style>
 </head>
@@ -384,6 +517,46 @@
                 <p class="font-sans text-brand-300 tracking-[0.3em] uppercase text-sm animate-pulse transform translate-y-0" id="loading-text">Crafting something special...</p>
             </div>
         </div>
+    </div>
+
+    <div id="gatekeeper" class="fixed inset-0 z-[100000] bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-1000">
+        <div class="glass-card p-6 sm:p-10 md:p-12 max-w-lg w-[90%] text-center transform transition-all duration-700 relative z-10 shadow-[0_0_50px_rgba(0,0,0,0.8)]" id="gatekeeper-card">
+            
+            <div id="gatekeeper-icon-container">
+                <div class="w-16 h-16 rounded-full bg-brand-900/20 flex items-center justify-center mx-auto mb-6 border border-brand-500/20 shadow-[0_0_20px_rgba(251,113,133,0.15)]">
+                    <i data-lucide="lock" class="w-7 h-7 text-brand-400 opacity-90"></i>
+                </div>
+            </div>
+            
+            <h2 class="font-serif text-2xl md:text-3xl text-white mb-6 md:mb-8 leading-relaxed px-2">How many letters are there in happiness?</h2>
+            
+            <div class="relative max-w-[280px] mx-auto">
+                <div id="pin-display" class="w-full bg-black/40 border border-white/10 rounded-2xl px-4 py-4 text-center text-white text-3xl tracking-[0.5em] font-sans min-h-[64px] flex items-center justify-center shadow-inner"></div>
+                <p id="gatekeeper-error" class="text-brand-400 text-xs md:text-sm mt-4 opacity-0 transition-opacity font-sans absolute w-full text-center font-medium"></p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 md:gap-5 mt-10 max-w-[280px] mx-auto">
+                <button onclick="numpadPress('1')" class="numpad-btn">1</button>
+                <button onclick="numpadPress('2')" class="numpad-btn">2</button>
+                <button onclick="numpadPress('3')" class="numpad-btn">3</button>
+                <button onclick="numpadPress('4')" class="numpad-btn">4</button>
+                <button onclick="numpadPress('5')" class="numpad-btn">5</button>
+                <button onclick="numpadPress('6')" class="numpad-btn">6</button>
+                <button onclick="numpadPress('7')" class="numpad-btn">7</button>
+                <button onclick="numpadPress('8')" class="numpad-btn">8</button>
+                <button onclick="numpadPress('9')" class="numpad-btn">9</button>
+                <button onclick="numpadClear()" class="numpad-btn numpad-action">C</button>
+                <button onclick="numpadPress('0')" class="numpad-btn">0</button>
+                <button onclick="checkGatekeeper()" class="numpad-btn numpad-action">OK</button>
+            </div>
+        </div>
+        
+        <div id="gatekeeper-success" class="fixed inset-0 bg-[#050505] z-20 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-1000">
+            <h1 id="success-name" class="juhi-name text-7xl md:text-9xl drop-shadow-2xl">Juhi</h1>
+            <p id="success-msg" class="mt-6 text-brand-300/80 font-sans tracking-[0.4em] text-xs md:text-sm uppercase animate-pulse">Exactly.</p>
+        </div>
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-600/10 rounded-full blur-[100px] pointer-events-none"></div>
     </div>
 
     <div class="bg-wrapper" id="parallax-bg">
@@ -472,11 +645,122 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card-container reveal">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-emerald-500/30 to-teal-700/30 flex items-center justify-center mb-6 md:mb-8 border border-emerald-400/30 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+                            <i data-lucide="heart" class="w-8 h-8 md:w-10 md:h-10 text-emerald-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Kindness</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                A quiet strength that softens the world around you. The way you care for others, even in small moments, leaves a lasting warmth in every heart you touch.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal delay-1">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-700/30 flex items-center justify-center mb-6 md:mb-8 border border-blue-400/30 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
+                            <i data-lucide="compass" class="w-8 h-8 md:w-10 md:h-10 text-blue-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Curiosity</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                You see the world as a place of endless questions and possibilities. Your desire to learn and explore makes every conversation with you an adventure.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal delay-2">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-orange-500/30 to-red-700/30 flex items-center justify-center mb-6 md:mb-8 border border-orange-400/30 shadow-[0_0_30px_rgba(249,115,22,0.2)]">
+                            <i data-lucide="flame" class="w-8 h-8 md:w-10 md:h-10 text-orange-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Passion</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                When something matters to you, it shines through in everything you do. That energy is contagious and makes ordinary moments extraordinary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-fuchsia-500/30 to-purple-700/30 flex items-center justify-center mb-6 md:mb-8 border border-fuchsia-400/30 shadow-[0_0_30px_rgba(217,70,239,0.2)]">
+                            <i data-lucide="palette" class="w-8 h-8 md:w-10 md:h-10 text-fuchsia-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Creativity</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                You see beauty where others see the ordinary. Your imagination adds color and wonder to the world around you.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal delay-1">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-cyan-500/30 to-blue-700/30 flex items-center justify-center mb-6 md:mb-8 border border-cyan-400/30 shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                            <i data-lucide="moon" class="w-8 h-8 md:w-10 md:h-10 text-cyan-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Silence</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                Not every presence needs noise. Your quiet moments speak volumes, carrying a calm depth that makes people feel safe without a single word.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal delay-2">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-lime-500/30 to-green-700/30 flex items-center justify-center mb-6 md:mb-8 border border-lime-400/30 shadow-[0_0_30px_rgba(132,204,22,0.2)]">
+                            <i data-lucide="eye" class="w-8 h-8 md:w-10 md:h-10 text-lime-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Perspective</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                You see angles others miss. The way you interpret life turns ordinary situations into thoughtful stories.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-rose-500/30 to-brand-700/30 flex items-center justify-center mb-6 md:mb-8 border border-rose-400/30 shadow-[0_0_30px_rgba(244,63,94,0.2)]">
+                            <i data-lucide="target" class="w-8 h-8 md:w-10 md:h-10 text-rose-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Determination</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                Once you decide to move forward, nothing truly stops you. Your persistence quietly breaks barriers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container reveal delay-1">
+                    <div class="glass-card p-8 md:p-10 h-full flex flex-col items-center text-center tilt-element magnetic">
+                        <div class="card-icon w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-yellow-400/30 to-amber-600/30 flex items-center justify-center mb-6 md:mb-8 border border-yellow-400/30 shadow-[0_0_30px_rgba(250,204,21,0.2)]">
+                            <i data-lucide="smile" class="w-8 h-8 md:w-10 md:h-10 text-yellow-200"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="font-serif text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-white">Your Laugh</h3>
+                            <p class="text-gray-300 font-light leading-relaxed text-base md:text-lg">
+                                That laugh of yours? It’s contagious. One minute everyone is serious, the next minute the whole room is laughing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Redesigned Little Things Section -->
     <section class="py-20 md:py-24 px-4 relative z-10" id="little-things">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
         
@@ -837,38 +1121,74 @@
         </div>
     </section>
 
-    <div id="final-message" class="fixed inset-0 flex flex-col items-center justify-center bg-black/90 backdrop-blur-xl z-50 opacity-0 pointer-events-none transition-all duration-1000 p-4">
+    <!-- Scrollable Final Message Overlay -->
+    <div id="final-message" class="fixed inset-0 bg-gradient-to-br from-[#1a050a] via-[#0a0204] to-[#050102] z-50 opacity-0 pointer-events-none transition-opacity duration-1000">
         
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[90vw] md:h-[90vw] max-w-[800px] max-h-[800px] bg-brand-600/20 rounded-full blur-[80px] md:blur-[100px] animate-pulse pointer-events-none"></div>
-
-        <div class="max-w-4xl transform scale-50 translate-y-20 filter blur-xl transition-all duration-1000 w-full text-center relative" id="final-content">
+        <!-- FIXED Background Elements (These will never scroll) -->
+        <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+            <!-- Warm Glowing Blobs -->
+            <div class="absolute top-[-10%] left-[-10%] w-[80vw] md:w-[50vw] h-[80vw] md:h-[50vw] bg-brand-600/20 rounded-full blur-[100px] animate-pulse"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[90vw] md:w-[60vw] h-[90vw] md:h-[60vw] bg-gold-500/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s"></div>
+            <div class="absolute top-[40%] left-[30%] w-[60vw] md:w-[40vw] h-[60vw] md:h-[40vw] bg-purple-600/10 rounded-full blur-[90px] animate-pulse" style="animation-delay: 2s"></div>
             
-            <div class="animate-float">
-                <div class="glass-card p-6 sm:p-10 md:p-16 border border-white/10 shadow-[0_0_80px_rgba(251,113,133,0.2)] relative overflow-hidden rounded-3xl">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-400 to-transparent"></div>
+            <!-- Abstract background SVGs -->
+            <svg class="absolute top-0 left-0 w-[50vw] md:w-[35vw] text-rose-500/10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+               <path fill="currentColor" d="M45.7,-76.1C58.9,-69.3,68.9,-54.6,76.5,-40.4C84.1,-26.2,89.3,-13.1,88.7,-0.4C88.2,12.3,81.9,24.6,73.9,35.6C65.9,46.6,56.1,56.3,44.2,63.1C32.3,69.9,18.3,73.8,4.1,70.9C-10.1,68.1,-24.1,58.5,-35.7,50.1C-47.3,41.7,-56.4,34.4,-64.8,24.5C-73.2,14.6,-80.9,2.2,-80.5,-10.1C-80.1,-22.4,-71.6,-34.5,-61.6,-44.1C-51.6,-53.7,-40.1,-60.8,-28.1,-68C-16.1,-75.2,-3.6,-82.5,10.6,-86.3C24.8,-90.1,32.5,-82.9,45.7,-76.1Z" transform="translate(100 100) scale(1.2)" />
+            </svg>
+            
+            <svg class="absolute bottom-0 right-0 w-[60vw] md:w-[45vw] text-amber-500/10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+               <path fill="currentColor" d="M49.4,-71.4C63.2,-61.2,73,-45.5,79.5,-28.5C85.9,-11.5,88.9,6.8,83.8,22.8C78.7,38.8,65.5,52.4,50.8,63.3C36.1,74.2,19.9,82.4,1.8,79.9C-16.3,77.4,-32.6,64.2,-46.3,51.4C-60,38.6,-71.1,26.2,-77.4,11C-83.7,-4.2,-85.2,-21.2,-78.3,-35.3C-71.4,-49.4,-56.2,-60.6,-41.5,-70.5C-26.8,-80.4,-13.4,-89,2.8,-92.8C19,-96.6,35.6,-81.6,49.4,-71.4Z" transform="translate(100 100) scale(1.1)" />
+            </svg>
 
-                    <i data-lucide="sparkles" class="absolute top-4 left-4 md:top-8 md:left-8 w-5 h-5 md:w-6 md:h-6 text-brand-300/50 animate-pulse"></i>
-                    <i data-lucide="sparkles" class="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-5 h-5 md:w-6 md:h-6 text-brand-300/50 animate-pulse" style="animation-delay: 1s;"></i>
+            <!-- Large Spinning SVG Backdrop -->
+            <i data-lucide="flower-2" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[60vw] h-auto text-brand-500/5 slow-spin"></i>
 
-                    <i data-lucide="heart-handshake" class="w-16 h-16 md:w-24 md:h-24 text-brand-400 mx-auto mb-6 md:mb-8 drop-shadow-[0_0_30px_rgba(251,113,133,0.8)] relative z-10"></i>
-                    
-                    <h1 class="font-cursive text-5xl sm:text-6xl md:text-[7rem] lg:text-[8rem] text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-white to-brand-300 mb-6 md:mb-8 drop-shadow-2xl leading-none shimmer-text relative z-10">
-                        You are magic.
-                    </h1>
-                    
-                    <div class="min-h-[180px] sm:min-h-[150px] md:min-h-[120px] max-w-3xl mx-auto px-2 sm:px-6 relative mt-8 md:mt-12">
-                        <i data-lucide="quote" class="absolute -top-4 -left-0 md:-top-6 md:-left-2 w-6 h-6 md:w-8 md:h-8 text-brand-400/20 rotate-180"></i>
-                        <p class="font-serif text-lg sm:text-xl md:text-3xl text-gray-200 font-light leading-relaxed relative z-10">
-                            <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
-                        </p>
-                        <i data-lucide="quote" class="absolute -bottom-4 -right-0 md:-bottom-6 md:-right-2 w-6 h-6 md:w-8 md:h-8 text-brand-400/20"></i>
+            <!-- Floating Decoration SVGs -->
+            <i data-lucide="sparkle" class="floating-svg text-rose-300/40 w-8 h-8 top-[10%] left-[10%] opacity-50" style="animation: float-1 8s ease-in-out infinite;"></i>
+            <i data-lucide="heart" class="floating-svg text-pink-400/30 w-12 h-12 top-[20%] right-[20%] opacity-50 fill-pink-400/20" style="animation: float-2 10s ease-in-out infinite;"></i>
+            <i data-lucide="star" class="floating-svg text-gold-300/40 w-6 h-6 bottom-[15%] left-[25%] opacity-50 fill-gold-300/20" style="animation: float-3 7s ease-in-out infinite;"></i>
+            <i data-lucide="moon" class="floating-svg text-purple-300/40 w-10 h-10 top-[40%] left-[5%] opacity-50 fill-purple-300/20" style="animation: float-2 12s ease-in-out infinite;"></i>
+            <i data-lucide="sun" class="floating-svg text-amber-300/30 w-14 h-14 bottom-[30%] right-[10%] opacity-50" style="animation: float-1 15s ease-in-out infinite;"></i>
+            <i data-lucide="cloud" class="floating-svg text-white/10 w-20 h-20 top-[60%] left-[15%] opacity-50" style="animation: float-3 18s ease-in-out infinite;"></i>
+            <i data-lucide="music" class="floating-svg text-rose-300/30 w-8 h-8 top-[70%] right-[30%] opacity-50" style="animation: float-1 9s ease-in-out infinite;"></i>
+            <i data-lucide="feather" class="floating-svg text-cyan-300/30 w-10 h-10 top-[25%] left-[50%] opacity-50" style="animation: float-2 11s ease-in-out infinite;"></i>
+            <i data-lucide="flower" class="floating-svg text-fuchsia-300/30 w-8 h-8 bottom-[10%] right-[50%] opacity-50" style="animation: float-3 14s ease-in-out infinite;"></i>
+        </div>
+
+        <!-- Confetti Layer (Fixed) -->
+        <div id="confetti-container" class="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>
+
+        <!-- SCROLLABLE Overlay Content -->
+        <div class="absolute inset-0 overflow-y-auto overflow-x-hidden z-20" id="final-scroll-container">
+            <div class="min-h-full flex flex-col items-center justify-center w-full p-4 sm:p-8 py-20 md:py-32">
+                <div class="w-full max-w-6xl text-center transform scale-50 translate-y-20 filter blur-xl transition-all duration-1000" id="final-content">
+                    <div class="animate-float">
+                        
+                        <i data-lucide="sparkles" class="w-16 h-16 md:w-20 md:h-20 text-rose-400 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(244,63,94,0.6)] animate-pulse"></i>
+                        
+                        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-10 md:mb-16 drop-shadow-xl leading-tight">
+                            You are magic, <br class="md:hidden"/><span class="juhi-name text-7xl sm:text-8xl md:text-[9rem] mt-2 block md:inline-block">Juhi</span>.
+                        </h1>
+                        
+                        <!-- Main Typewriter Content Area -->
+                        <div class="w-full px-2 sm:px-12 relative mt-4">
+                            <p class="font-serif text-2xl sm:text-3xl md:text-[2.5rem] text-gray-100 font-light leading-relaxed md:leading-[1.8] whitespace-pre-wrap text-center tracking-wide">
+                                <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
+                            </p>
+                        </div>
+
+                        <!-- Ending Area -->
+                        <div class="mt-20 md:mt-32 flex flex-col items-center">
+                            <span id="final-greeting" class="font-bold text-rose-200 text-lg sm:text-xl md:text-2xl block opacity-0 transition-opacity duration-1000 uppercase tracking-[0.4em] font-sans">
+                                Happy Women's Day, <br class="sm:hidden"/><span class="juhi-name normal-case tracking-normal text-6xl sm:text-7xl md:text-8xl mt-6 block sm:inline-block">Juhi</span>
+                            </span>
+                            
+                            <button id="close-btn" onclick="closeFinalMessage()" class="mt-16 md:mt-24 px-12 md:px-16 py-4 rounded-full border border-rose-400/30 bg-rose-900/20 hover:bg-rose-800/40 hover:border-rose-400/80 transition-all font-sans tracking-[0.3em] text-xs md:text-sm uppercase group opacity-0 pointer-events-none duration-1000 shadow-[0_0_30px_rgba(244,63,94,0.1)] hover:shadow-[0_0_50px_rgba(244,63,94,0.4)] cursor-pointer text-rose-100 backdrop-blur-md">
+                                <span class="group-hover:tracking-[0.4em] transition-all duration-300">Close</span>
+                            </button>
+                        </div>
+                        
                     </div>
-
-                    <span id="final-greeting" class="font-bold text-white text-2xl sm:text-3xl md:text-5xl shimmer-text block mt-12 md:mt-16 opacity-0 transition-opacity duration-1000 relative z-10">Happy Women's Day</span>
-                    
-                    <button id="close-btn" onclick="closeFinalMessage()" class="mt-10 md:mt-16 px-8 md:px-12 py-3 md:py-4 rounded-full border border-white/20 bg-white/5 hover:bg-brand-500/20 hover:border-brand-400/50 transition-all font-sans tracking-widest text-xs md:text-sm uppercase group opacity-0 pointer-events-none duration-1000 shadow-[0_0_20px_rgba(251,113,133,0)] hover:shadow-[0_0_40px_rgba(251,113,133,0.4)] relative z-10">
-                        <span class="group-hover:tracking-[0.3em] transition-all duration-300">Close</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -877,11 +1197,107 @@
     <script>
         lucide.createIcons();
 
+        document.body.style.overflow = 'hidden';
+
+        const gatekeeper = document.getElementById('gatekeeper');
+        const gatekeeperCard = document.getElementById('gatekeeper-card');
+        const pinDisplay = document.getElementById('pin-display');
+        const gatekeeperError = document.getElementById('gatekeeper-error');
+        const gatekeeperSuccess = document.getElementById('gatekeeper-success');
+        const successName = document.getElementById('success-name');
+        const successMsg = document.getElementById('success-msg');
+
+        let attempts = 0;
+        let currentInput = "";
+        const maxAttempts = 3;
+
+        function numpadPress(num) {
+            if(currentInput.length < 4) { 
+                currentInput += num;
+                pinDisplay.innerText = currentInput;
+                gatekeeperError.style.opacity = '0';
+                
+                if (currentInput === '4') {
+                    setTimeout(checkGatekeeper, 200); 
+                }
+            }
+        }
+
+        function numpadClear() {
+            currentInput = "";
+            pinDisplay.innerText = "";
+        }
+
+        function unlockGatekeeper(title, subtitle) {
+            gatekeeperError.style.opacity = '0';
+            gatekeeperCard.style.opacity = '0';
+            gatekeeperCard.style.transform = 'scale(0.9)';
+            gatekeeperCard.style.pointerEvents = 'none';
+            
+            successName.innerText = title;
+            successMsg.innerText = subtitle;
+            
+            setTimeout(() => {
+                gatekeeperSuccess.style.pointerEvents = 'auto';
+                gatekeeperSuccess.style.opacity = '1';
+                
+                setTimeout(() => {
+                    gatekeeper.style.opacity = '0';
+                    window.scrollTo(0, 0); 
+                    document.body.style.overflow = ''; 
+                    setTimeout(() => gatekeeper.remove(), 1000);
+                }, 3000);
+            }, 500);
+        }
+
+        function checkGatekeeper() {
+            if (currentInput === "") return;
+            
+            const ans = currentInput.trim();
+            attempts++;
+            const iconContainer = document.getElementById('gatekeeper-icon-container');
+            
+            if (ans === '4') {
+                iconContainer.innerHTML = '<div class="w-16 h-16 rounded-full bg-green-900/20 flex items-center justify-center mx-auto mb-6 border border-green-500/30 shadow-[0_0_20px_rgba(74,222,128,0.2)]"><i data-lucide="unlock" class="w-7 h-7 text-green-400 opacity-90 animate-pulse"></i></div>';
+                lucide.createIcons();
+                
+                setTimeout(() => unlockGatekeeper("Juhi", "Exactly."), 500);
+            } else if (attempts >= maxAttempts) {
+                gatekeeperError.innerText = "Lock overridden... Unlocking anyway!";
+                gatekeeperError.classList.replace('text-brand-400', 'text-brand-300');
+                gatekeeperError.style.opacity = '1';
+                
+                iconContainer.innerHTML = '<div class="w-16 h-16 rounded-full bg-brand-900/20 flex items-center justify-center mx-auto mb-6 border border-brand-500/30 shadow-[0_0_20px_rgba(251,113,133,0.2)]"><i data-lucide="unlock" class="w-7 h-7 text-brand-300 opacity-90 animate-pulse"></i></div>';
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    unlockGatekeeper("Juhi", "You are the happiness.");
+                }, 1500);
+            } else {
+                if (attempts === 1) {
+                    gatekeeperError.innerText = "Hint 1: Count the letters of the one who brings it.";
+                } else if (attempts === 2) {
+                    gatekeeperError.innerText = "Hint 2: It is a 4-letter name. J-U-H-I.";
+                }
+                
+                gatekeeperError.style.opacity = '1';
+                gatekeeperCard.classList.remove('animate-shake');
+                void gatekeeperCard.offsetWidth; 
+                gatekeeperCard.classList.add('animate-shake');
+                
+                setTimeout(numpadClear, 800);
+            }
+        }
+
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const preloader = document.getElementById('preloader');
-                preloader.classList.add('hide'); 
-                setTimeout(() => { preloader.style.display = 'none'; }, 1200);
+                if (preloader) {
+                    preloader.classList.add('hide'); 
+                    setTimeout(() => { 
+                        preloader.style.display = 'none'; 
+                    }, 1200);
+                }
             }, 1000); 
         });
 
@@ -1104,10 +1520,15 @@
         const finalContent = document.getElementById('final-content');
         const magicContainer = document.getElementById('magic-container');
         const shockwave = document.getElementById('shockwave');
+        const scrollContainer = document.getElementById('final-scroll-container');
         
-        const personalNote = "Just a small reminder that you’re truly special. Your smile, your kindness, and the way you carry yourself make you stand out in the most beautiful way. Hope today brings you lots of happiness and reminds you how amazing and appreciated you are. Keep being the wonderful person you are and keep spreading those positive vibes everywhere you go. ✨";
-        let typeIndex = 0;
-        const typeSpeed = 50; 
+        const textSegments = [
+            { text: "Just a small reminder that you’re truly special. Your smile, your kindness, and the way you carry yourself make you stand out in the most beautiful way. Hope today brings you lots of happiness and reminds you how amazing and appreciated you are. Keep being the wonderful person you are and keep spreading those positive vibes everywhere you go. ✨\n\nAnd yes, I know your gift is due... I will give it to you when we meet. ❤️", highlight: false }
+        ];
+        
+        let typeSeg = 0;
+        let typeChar = 0;
+        const typeSpeed = 40; 
         let isTyping = false;
 
         const circumference = 88 * 2 * Math.PI; 
@@ -1163,11 +1584,57 @@
         holdBtn.addEventListener('touchstart', (e) => { e.preventDefault(); startHolding(e); }, {passive: false});
         window.addEventListener('touchend', resetHolding);
 
+        function createContinuousConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#f43f5e', '#fb7185', '#fde047', '#ffffff', '#fecdd3', '#fef08a'];
+            
+            setInterval(() => {
+                if (finalMessage.style.opacity === '1') {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti-piece');
+                    
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.width = (Math.random() * 6 + 4) + 'px';
+                    confetti.style.height = (Math.random() * 12 + 8) + 'px';
+                    
+                    container.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+            }, 100);
+        }
+
         function typeWriter() {
-            if (typeIndex < personalNote.length) {
-                document.getElementById("typewriter-text").innerHTML += personalNote.charAt(typeIndex);
-                typeIndex++;
-                setTimeout(typeWriter, typeSpeed);
+            if (typeSeg < textSegments.length) {
+                let seg = textSegments[typeSeg];
+                let container = document.getElementById("typewriter-text");
+                
+                if (typeChar === 0) {
+                    let span = document.createElement('span');
+                    if (seg.highlight) span.className = 'juhi-body-highlight';
+                    container.appendChild(span);
+                }
+                
+                let currentSpan = container.lastChild;
+                let char = seg.text.charAt(typeChar);
+                currentSpan.textContent += char;
+                
+                typeChar++;
+                
+                if (typeChar >= seg.text.length) {
+                    typeSeg++;
+                    typeChar = 0;
+                }
+                
+                let speed = typeSpeed;
+                if (char === '.' || char === ',' || char === '!') speed = typeSpeed * 4;
+                if (char === '\n') speed = typeSpeed * 3;
+
+                setTimeout(typeWriter, speed);
             } else {
                 isTyping = false;
                 document.getElementById("final-greeting").style.opacity = '1';
@@ -1223,14 +1690,20 @@
             document.getElementById("final-greeting").style.opacity = '0';
             document.getElementById("close-btn").style.opacity = '0';
             document.getElementById("close-btn").style.pointerEvents = 'none';
-            typeIndex = 0;
+            typeSeg = 0;
+            typeChar = 0;
 
             magicContainer.style.opacity = '0';
             setTimeout(() => {
                 magicContainer.style.display = 'none';
                 
+                document.body.style.overflow = 'hidden';
+
                 finalMessage.style.pointerEvents = 'auto';
                 finalMessage.style.opacity = '1';
+                scrollContainer.scrollTop = 0;
+                
+                createContinuousConfetti();
                 
                 setTimeout(() => {
                     finalContent.classList.remove('scale-50', 'translate-y-20', 'blur-xl');
@@ -1257,6 +1730,8 @@
             setTimeout(() => {
                  document.getElementById("typewriter-text").innerHTML = '';
                  isTyping = false;
+                 document.body.style.overflow = '';
+                 document.getElementById('confetti-container').innerHTML = '';
             }, 1000);
 
             setTimeout(() => {

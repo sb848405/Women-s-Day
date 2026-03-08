@@ -1124,14 +1124,11 @@
     <!-- Scrollable Final Message Overlay -->
     <div id="final-message" class="fixed inset-0 bg-gradient-to-br from-[#1a050a] via-[#0a0204] to-[#050102] z-50 opacity-0 pointer-events-none transition-opacity duration-1000">
         
-        <!-- FIXED Background Elements (These will never scroll) -->
         <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-            <!-- Warm Glowing Blobs -->
             <div class="absolute top-[-10%] left-[-10%] w-[80vw] md:w-[50vw] h-[80vw] md:h-[50vw] bg-brand-600/20 rounded-full blur-[100px] animate-pulse"></div>
             <div class="absolute bottom-[-10%] right-[-10%] w-[90vw] md:w-[60vw] h-[90vw] md:h-[60vw] bg-gold-500/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s"></div>
             <div class="absolute top-[40%] left-[30%] w-[60vw] md:w-[40vw] h-[60vw] md:h-[40vw] bg-purple-600/10 rounded-full blur-[90px] animate-pulse" style="animation-delay: 2s"></div>
             
-            <!-- Abstract background SVGs -->
             <svg class="absolute top-0 left-0 w-[50vw] md:w-[35vw] text-rose-500/10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                <path fill="currentColor" d="M45.7,-76.1C58.9,-69.3,68.9,-54.6,76.5,-40.4C84.1,-26.2,89.3,-13.1,88.7,-0.4C88.2,12.3,81.9,24.6,73.9,35.6C65.9,46.6,56.1,56.3,44.2,63.1C32.3,69.9,18.3,73.8,4.1,70.9C-10.1,68.1,-24.1,58.5,-35.7,50.1C-47.3,41.7,-56.4,34.4,-64.8,24.5C-73.2,14.6,-80.9,2.2,-80.5,-10.1C-80.1,-22.4,-71.6,-34.5,-61.6,-44.1C-51.6,-53.7,-40.1,-60.8,-28.1,-68C-16.1,-75.2,-3.6,-82.5,10.6,-86.3C24.8,-90.1,32.5,-82.9,45.7,-76.1Z" transform="translate(100 100) scale(1.2)" />
             </svg>
@@ -1140,10 +1137,8 @@
                <path fill="currentColor" d="M49.4,-71.4C63.2,-61.2,73,-45.5,79.5,-28.5C85.9,-11.5,88.9,6.8,83.8,22.8C78.7,38.8,65.5,52.4,50.8,63.3C36.1,74.2,19.9,82.4,1.8,79.9C-16.3,77.4,-32.6,64.2,-46.3,51.4C-60,38.6,-71.1,26.2,-77.4,11C-83.7,-4.2,-85.2,-21.2,-78.3,-35.3C-71.4,-49.4,-56.2,-60.6,-41.5,-70.5C-26.8,-80.4,-13.4,-89,2.8,-92.8C19,-96.6,35.6,-81.6,49.4,-71.4Z" transform="translate(100 100) scale(1.1)" />
             </svg>
 
-            <!-- Large Spinning SVG Backdrop -->
             <i data-lucide="flower-2" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[60vw] h-auto text-brand-500/5 slow-spin"></i>
 
-            <!-- Floating Decoration SVGs -->
             <i data-lucide="sparkle" class="floating-svg text-rose-300/40 w-8 h-8 top-[10%] left-[10%] opacity-50" style="animation: float-1 8s ease-in-out infinite;"></i>
             <i data-lucide="heart" class="floating-svg text-pink-400/30 w-12 h-12 top-[20%] right-[20%] opacity-50 fill-pink-400/20" style="animation: float-2 10s ease-in-out infinite;"></i>
             <i data-lucide="star" class="floating-svg text-gold-300/40 w-6 h-6 bottom-[15%] left-[25%] opacity-50 fill-gold-300/20" style="animation: float-3 7s ease-in-out infinite;"></i>
@@ -1155,10 +1150,8 @@
             <i data-lucide="flower" class="floating-svg text-fuchsia-300/30 w-8 h-8 bottom-[10%] right-[50%] opacity-50" style="animation: float-3 14s ease-in-out infinite;"></i>
         </div>
 
-        <!-- Confetti Layer (Fixed) -->
         <div id="confetti-container" class="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>
 
-        <!-- SCROLLABLE Overlay Content -->
         <div class="absolute inset-0 overflow-y-auto overflow-x-hidden z-20" id="final-scroll-container">
             <div class="min-h-full flex flex-col items-center justify-center w-full p-4 sm:p-8 py-20 md:py-32">
                 <div class="w-full max-w-6xl text-center transform scale-50 translate-y-20 filter blur-xl transition-all duration-1000" id="final-content">
@@ -1170,7 +1163,6 @@
                             You are magic, <br class="md:hidden"/><span class="juhi-name text-7xl sm:text-8xl md:text-[9rem] mt-2 block md:inline-block">Juhi</span>.
                         </h1>
                         
-                        <!-- Main Typewriter Content Area -->
                         <div class="w-full px-2 sm:px-12 relative mt-4">
                             <p class="font-serif text-2xl sm:text-3xl md:text-[2.5rem] text-gray-100 font-light leading-relaxed md:leading-[1.8] whitespace-pre-wrap text-center tracking-wide">
                                 <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
@@ -1275,9 +1267,9 @@
                 }, 1500);
             } else {
                 if (attempts === 1) {
-                    gatekeeperError.innerText = "Hint 1: Count the letters of the one who brings it.";
+                    gatekeeperError.innerText = "Hint 1: What is your name?";
                 } else if (attempts === 2) {
-                    gatekeeperError.innerText = "Hint 2: It is a 4-letter name. J-U-H-I.";
+                    gatekeeperError.innerText = "Hint 2: How many letters does your name have?";
                 }
                 
                 gatekeeperError.style.opacity = '1';
